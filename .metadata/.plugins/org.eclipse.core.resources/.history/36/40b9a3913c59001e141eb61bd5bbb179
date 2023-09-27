@@ -1,0 +1,27 @@
+package arrayList;
+
+
+class parent{
+	parent() {
+		System.out.println("parent");
+	}
+	void printNext() {
+		System.out.println("parent2");
+	}
+}
+
+public class ExtendsTest extends parent{
+
+	public ExtendsTest() {
+		//super(); super() 없어도 자동으로 부모 호출
+		System.out.println("test");
+		printNext(); // 부모가 나중에 실행되려면 부모 클래스에 생성자를 명시적으로 만들고 호출
+	}
+	public static void main(String[] args) {
+		new ExtendsTest();
+		System.out.println("test2");
+	}
+}	
+
+	
+

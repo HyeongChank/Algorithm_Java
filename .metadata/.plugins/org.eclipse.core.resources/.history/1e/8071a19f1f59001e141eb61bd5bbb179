@@ -1,0 +1,24 @@
+package arrayList;
+
+
+class parent{
+	void parent() {
+		System.out.println("parent");
+	}
+}
+
+public class ExtendsTest extends parent{
+
+	public ExtendsTest() {
+		super();
+		System.out.println("test");
+	}
+	public static void main(String[] args) {
+		new ExtendsTest();
+		System.out.println("test2");
+
+	}
+}	
+
+	
+

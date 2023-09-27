@@ -1,0 +1,45 @@
+package arrayList;
+
+
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+public class Backjoon2164 {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+	
+		Queue<Integer> qu = new LinkedList<>();
+		for(int i=1; i<=n;i++) {
+			qu.add(i);
+		}
+		while(qu.size()>1) {
+			//poll 헤더 뺌 / add 마지막 추가
+			qu.poll();
+			int popPushN = qu.poll();
+			qu.add(popPushN);
+		}
+		System.out.println(qu.poll());
+		Test t = new Test();
+		t.Test();
+	}
+	
+}
+
+class Test {
+	void Test(){
+		Deque<Integer> deque = new LinkedList<>();
+		deque.add(1);
+		deque.add(2);
+		deque.add(3);
+		deque.addFirst(1010);
+		deque.addFirst(2020);
+		int n = deque.pollFirst();
+		int ln = deque.poll();
+		System.out.println(n + " " + ln);
+		 
+	}
+}

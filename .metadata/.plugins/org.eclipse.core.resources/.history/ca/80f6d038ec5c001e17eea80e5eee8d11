@@ -1,0 +1,38 @@
+package arrayList;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class TwoPoint {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		long num = kb.nextLong();
+		
+		long sum =1;
+		long start = 1;
+		long end=1;
+		int count =1;
+		//list 디버그 확인용
+		List<Long> ls = new ArrayList<>();
+		while(end < num) {
+			if(sum==num) {
+				ls.add(start);
+				count++;
+				end++;
+				sum += end;
+			}
+			else if(sum<num) {
+				end++;
+				sum += end;
+			}
+			else if(sum>num) {
+				sum -= start;
+				start++;
+			}
+		}
+		
+		System.out.println(count);
+	}
+}

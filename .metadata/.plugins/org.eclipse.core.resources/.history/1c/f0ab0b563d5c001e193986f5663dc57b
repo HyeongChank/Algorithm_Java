@@ -1,0 +1,29 @@
+package arrayList;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Backjoon2164 {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+	
+		Queue<Integer> qu = new LinkedList<>();
+		for(int i=0; i<n;i--) {
+			qu.add(i);
+			
+		}
+		while(qu.size()>1) {
+			qu.poll();
+			int popPushN = qu.poll();
+			qu.add(popPushN);
+		}
+		System.out.println(qu.poll());
+	}
+
+}

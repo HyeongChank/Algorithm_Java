@@ -1,0 +1,21 @@
+package data_structure;
+import java.util.Scanner;
+
+public class Backjoon1546 {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		int num = kb.nextInt();
+		long max = 0;
+		long sum =0;
+        for(int i=0; i< num; i++){
+        	long value = kb.nextInt();
+            sum += value;
+            if(value >= max){
+                max = value;
+            }
+        }
+        System.out.println(sum *100.0 / max / num);
+	}
+
+}

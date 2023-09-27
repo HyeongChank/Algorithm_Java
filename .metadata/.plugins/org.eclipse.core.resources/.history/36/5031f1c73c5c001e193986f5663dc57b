@@ -1,0 +1,23 @@
+package arrayList;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Backjoon2164 {
+
+	public static void main(String[] args) {
+		Scanner kb = new Scanner(System.in);
+		int n = kb.nextInt();
+		Stack<Integer> stack = new Stack<>();
+		for(int i=n; i>0;i--) {
+			stack.push(i);
+		}
+		while(stack.size()>1) {
+			stack.pop();
+			int popPushN = stack.pop();
+			stack.add(popPushN);
+		}
+		System.out.println(stack.pop());
+	}
+
+}
